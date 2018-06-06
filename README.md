@@ -48,12 +48,12 @@ import React, { Component } from 'react';
 import invokeApp from 'react-native-invoke-app';
 
 class App extends Component {
-    componentWillMount() {
-        DeviceEventEmitter.addListener('appInvoked', (data) => {
+	componentWillMount() {
+		DeviceEventEmitter.addListener('appInvoked', (data) => {
 			const { route } = data;
 			// Using react-navigation library for navigation.
-            this.props.navigation.navigate(route);
-        });
+			this.props.navigation.navigate(route);
+		});
 	}
 
 	render() {
@@ -96,20 +96,20 @@ import com.facebook.react.ReactActivity;
 +import com.codegulp.invokeapp.RNInvokeApp;
 
 public class MainActivity extends ReactActivity {
-    /**
-     * Returns the name of the main component registered from JavaScript.
-     * This is used to schedule rendering of the component.
-     */
-    @Override
-    protected String getMainComponentName() {
-        return "testProject";
-    }
+	/**
+		* Returns the name of the main component registered from JavaScript.
+		* This is used to schedule rendering of the component.
+		*/
+	@Override
+	protected String getMainComponentName() {
+			return "testProject";
+	}
 
-+    @Override
-+    protected void onCreate(Bundle savedInstanceState) {
-+        super.onCreate(savedInstanceState);
-+        RNInvokeApp.sendEvent();
-+    }
++	@Override
++	protected void onCreate(Bundle savedInstanceState) {
++	    super.onCreate(savedInstanceState);
++	    RNInvokeApp.sendEvent();
++	}
 }
 ```
 
