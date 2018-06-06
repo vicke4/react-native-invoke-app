@@ -1,8 +1,6 @@
 
 # React Native Invoke App
 
-## Overview
-
 [Headless JS](https://facebook.github.io/react-native/docs/headless-js-android.html) is a way to run background tasks in a React Native app. Sometimes we may want to invoke the app from Headless JS. You can use this module to bring your app to foreground in all the following three cases.
 
 - App is in foreground
