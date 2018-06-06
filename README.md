@@ -81,7 +81,7 @@ AppRegistry.registerHeadlessTask(
     'RNPushNotificationActionHandlerTask', () => notificationActionHandler,
 );
 
-AppRegistry.registerComponent('testProject', () => navigationBase);
+AppRegistry.registerComponent('testProject', () => App);
 
 ```
 
