@@ -1,0 +1,30 @@
+
+{
+  "name": "react-native-invoke-app",
+  "description": "",
+  "version": "1.0.0",
+  "license": "MIT",
+  "main": "index.js",
+  "author": {
+    "name": "Ganapathy S",
+    "email": "vignesh@syncwithtech.org",
+    "url": "https://www.syncwithtech.org"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vicke4/react-native-invoke-app.git"
+  },
+  "keywords": [
+    "react-native",
+    "headless js",
+    "bring app to foreground",
+    "invoke app"
+  ],
+  "bugs": {
+    "url": "https://github.com/vicke4/react-native-invoke-app/issues",
+    "email": "vignesh@syncwithtech.org"
+  },
+  "peerDependencies": {
+    "react-native": "^0.41.2"
+  }
+}
