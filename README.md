@@ -34,7 +34,7 @@ Example:
 const yourObject = { route: 'Dashboard' };
 
 invokeApp({
-	data: yourObject,
+    data: yourObject,
 })
 ```
 
@@ -48,36 +48,37 @@ import React, { Component } from 'react';
 import invokeApp from 'react-native-invoke-app';
 
 class App extends Component {
-	componentWillMount() {
-		DeviceEventEmitter.addListener('appInvoked', (data) => {
-			const { route } = data;
-			// Using react-navigation library for navigation.
-			this.props.navigation.navigate(route);
-		});
-	}
+    componentWillMount() {
+        DeviceEventEmitter.addListener('appInvoked', (data) => {
+	    const { route } = data;
+	    
+	    // Using react-navigation library for navigation.
+	    this.props.navigation.navigate(route);
+	});
+    }
 
-	render() {
-		return (
-			<View>
-				<Text>
-					This is Home screen.
-				</Text>
-			</View>
-		)
-	}
+    render() {
+        return (
+	    <View>
+		<Text>
+		    This is Home screen.
+		</Text>
+	    </View>
+	)
+    }
 }
 
 const notificationActionHandler = async (data) => {
-	// Your background task
-	const yourObject = { route: 'Dashboard' };
+    // Your background task
+    const yourObject = { route: 'Dashboard' };
 
-	invokeApp({
-		data: yourObject,
-	})
+    invokeApp({
+	data: yourObject,
+    })
 }
 
 AppRegistry.registerHeadlessTask(
-	'RNPushNotificationActionHandlerTask', () => notificationActionHandler,
+    'RNPushNotificationActionHandlerTask', () => notificationActionHandler,
 );
 
 AppRegistry.registerComponent('testProject', () => navigationBase);
@@ -96,20 +97,20 @@ import com.facebook.react.ReactActivity;
 +import com.codegulp.invokeapp.RNInvokeApp;
 
 public class MainActivity extends ReactActivity {
-	/**
-		* Returns the name of the main component registered from JavaScript.
-		* This is used to schedule rendering of the component.
-		*/
-	@Override
-	protected String getMainComponentName() {
-			return "testProject";
-	}
-
-+	@Override
-+	protected void onCreate(Bundle savedInstanceState) {
-+	    super.onCreate(savedInstanceState);
-+	    RNInvokeApp.sendEvent();
-+	}
+    /**
+    * Returns the name of the main component registered from JavaScript.
+    * This is used to schedule rendering of the component.
+    */
+    @Override
+    protected String getMainComponentName() {
+    	return "testProject";
+    }
+    
++   @Override
++   protected void onCreate(Bundle savedInstanceState) {
++       super.onCreate(savedInstanceState);
++	RNInvokeApp.sendEvent();
++   }
 }
 ```
 
