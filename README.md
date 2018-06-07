@@ -16,7 +16,7 @@ $ react-native link react-native-invoke-app
 
 ## Usage
 ```javascript
-import invokeApp from 'react-native-react-native-invoke-app';
+import invokeApp from 'react-native-invoke-app';
 
 // Within your headless function
 invokeApp();
