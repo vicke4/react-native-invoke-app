@@ -41,9 +41,12 @@ invokeApp({
 Let's say you want to navigate to dashboard screen of the app after a specific task is completed. You can acheive it like,
 
 ```javascript
-import { DeviceEventEmitter, Text, View } from 'react-native';
 import React, { Component } from 'react';
+import { DeviceEventEmitter, Text, View } from 'react-native';
+import { createStackNavigator } from 'react-navigation';
 import invokeApp from 'react-native-invoke-app';
+
+import Dashboard from './dashboard';
 
 class App extends Component {
     componentWillMount() {
@@ -66,6 +69,15 @@ class App extends Component {
     }
 }
 
+const appStack = () => {
+    const Stack = createStackNavigator({
+        App,
+        Dashboard,
+    });
+
+    return <Stack />
+}
+
 const notificationActionHandler = async (data) => {
     // Your background task
     const yourObject = { route: 'Dashboard' };
@@ -79,7 +91,7 @@ AppRegistry.registerHeadlessTask(
     'RNPushNotificationActionHandlerTask', () => notificationActionHandler,
 );
 
-AppRegistry.registerComponent('testProject', () => App);
+AppRegistry.registerComponent('testProject', () => appStack);
 
 ```
 
