@@ -43,3 +43,8 @@ local.properties
 buck-out/
 \.buckd/
 *.keystore
+
+# JAVA
+.project
+.classpath
+.settings
