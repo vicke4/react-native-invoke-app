@@ -51,7 +51,7 @@ public class RNInvokeApp extends ReactContextBaseJavaModule {
             Class<?> activityClass = Class.forName(className);
             Intent activityIntent = new Intent(reactContext, activityClass);
 
-            activityIntent.addFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            activityIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             reactContext.startActivity(activityIntent);
         } catch(Exception e) {
             Log.e(LOG_TAG, "Class not found", e);
