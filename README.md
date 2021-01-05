@@ -13,6 +13,7 @@
 
 ```
 $ npm install --save react-native-invoke-app
+# if you are react-native version is <0.60
 $ react-native link react-native-invoke-app
 ```
 
@@ -44,7 +45,7 @@ Let's say you want to navigate to dashboard screen of the app after a specific t
 
 ```javascript
 import React, { Component } from 'react';
-import { DeviceEventEmitter, Text, View } from 'react-native';
+import { AppRegistry, DeviceEventEmitter, Text, View } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 import invokeApp from 'react-native-invoke-app';
 
@@ -54,7 +55,7 @@ class App extends Component {
     componentWillMount() {
         DeviceEventEmitter.addListener('appInvoked', (data) => {
 	    const { route } = data;
-	    
+
 	    // Using react-navigation library for navigation.
 	    this.props.navigation.navigate(route);
 	});
@@ -117,7 +118,7 @@ public class MainActivity extends ReactActivity {
     protected String getMainComponentName() {
     	return "testProject";
     }
-    
+
 +   @Override
 +   protected void onCreate(Bundle savedInstanceState) {
 +       super.onCreate(savedInstanceState);
