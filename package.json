@@ -1,6 +1,6 @@
 {
   "name": "react-native-invoke-app",
-  "description": "",
+  "description": "Bring React Native App to foreground from Headless JS",
   "version": "1.0.3",
   "license": "MIT",
   "main": "index.js",
