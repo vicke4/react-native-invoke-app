@@ -13,7 +13,7 @@
 
 ```
 $ npm install --save react-native-invoke-app
-# if you are react-native version is <0.60
+# if your react-native version is <0.60
 $ react-native link react-native-invoke-app
 ```
 
