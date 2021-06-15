@@ -102,12 +102,12 @@ AppRegistry.registerComponent('testProject', () => appStack);
 
 Event listener will work fine when your app is in background or foreground. If it is not running, to capture the first event we need to do some extra work. Make the following changes in your `MainActivity.java` file of React Native app,
 
-```diff
+```
 package com.yourpackage;
 
-+import android.os.Bundle;
+import android.os.Bundle;  // <-- Add this import
 import com.facebook.react.ReactActivity;
-+import com.codegulp.invokeapp.RNInvokeApp;
+import com.codegulp.invokeapp.RNInvokeApp;  // <-- Add this import
 
 public class MainActivity extends ReactActivity {
     /**
@@ -119,11 +119,11 @@ public class MainActivity extends ReactActivity {
     	return "testProject";
     }
 
-+   @Override
-+   protected void onCreate(Bundle savedInstanceState) {
-+       super.onCreate(savedInstanceState);
-+	RNInvokeApp.sendEvent();
-+   }
+   @Override  // <-- Add this function
+   protected void onCreate(Bundle savedInstanceState) {
+       super.onCreate(savedInstanceState);
+	RNInvokeApp.sendEvent();
+   }
 }
 ```
 
